@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="FacebookApp" lang="es">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+	<title>Facebook listado</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+
+	<script src="./../node_modules/angular/angular.js"></script>
+	<script src="./js/app.js"></script>
+	<script src="./js/controlador.js"></script>
+	<script src="./js/routes.js"></script>
+
+	<style type="text/css">
+			body{
+				
+			}
+			#boton{
+				margin: 30px;
+				text-align: center;
+			}
+			.table{
+				font-family: 'Raleway', sans-serif;
+				font-size: 20px;
+			}
+	</style>
+
+</head>
+<body ng-controller="facebookController">
+		<div id="boton">
+			<button ng-hide="logged" ng-click="FBLogin()" class="btn btn-primary">Facebook login</button>
+		</div>
+		<!--<button ng-show="logged" ng-click="FBLogot()">LogOut</button>!-->
+		<table class="table table-condensed" ng-show="logged">
+		    <tr>
+		      <th>#</th>
+		      <th></th>
+		      <th>Facebook Gobernador</th>
+		      <th>Likes</th>
+		     
+		    </tr>
+		    <tr ng-repeat="gobers in result | orderBy:'-likes'" ng-class="{info: gobers.nombre=='MiguelMarquezM' }">
+		      <td>{{$index+1}}</td>
+		      <td><img ng-src="{{gobers.foto.data.url}}"</td>
+		      <td >{{gobers.nombre}}</td>
+		      <td>{{gobers.likes | number}}</td>
+		    </tr>
+		</table>
+
+		
+
+</body>
+</html>

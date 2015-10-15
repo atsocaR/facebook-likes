@@ -1,0 +1,22 @@
+{
+  "name": "redes",
+  "version": "1.0.0",
+  "description": "show facebook likes ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chkoluevano/facebook-likes.git"
+  },
+  "author": "chko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chkoluevano/facebook-likes/issues"
+  },
+  "homepage": "https://github.com/chkoluevano/facebook-likes#readme",
+  "dependencies": {
+    "angular": "^1.4.7"
+  }
+}
