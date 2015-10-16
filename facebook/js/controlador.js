@@ -26,32 +26,33 @@ app.controller('facebookController',function($scope,$rootScope){
 	'mario.anguiano.gobernador',
 	'egidiotorrecantu'
 	];
-	gobiernos=["MiguelMarquezM", 
-	"eruviel",
-	"MiguelAngelMancera",
-	'JaimeRodriguezElBronco',
-	'franciscokikovega',
-	'manuelvelascoc',
-	'CarrerasGobernador',
-	'SilvanoAureoles',
-	'panchdominguez',
-	'AlejandroMC',
-	'ClaudiaPavlovich',
-	'arturonunez',
-	'mariolopezvaldez',
+	gobiernos=["gobiernoguanajuato", 
+	"GobiernoDistritoFederal",
+	'GobiernoJalisco',
+	'gobierno.estado.yucatan',	
+	'GobQro',
+	'gobmichoacan',
+	'gobierno.edomex',
 	'GobiernodeAguascalientes',
-	'robertosandovalc',
-	'PacoOlveraFanPage',
-	'miguelzac',
-	'jaristoteles.sandoval',
-	'jherreracaldera',
-	'RafaelMorenoValle',
-	'GabinoCueMonteagudo',
-	'betoborgefans',
-	'gracoramirezg',
-	'cesarduartejaquez',
-	'mario.anguiano.gobernador',
-	'egidiotorrecantu'
+	'GobiernoBC',
+	'GobiernoBCS',
+	'gobiernochihuahua',
+	'GobTamaulipas',
+	'gobiernodecoahuila',
+	'GuerreroPortal',
+	'GobiernodeHidalgo',
+	'GobiernoDeMorelos',
+	'gobiernonuevoleon',
+	'GobOax',
+	'gobierno.colima',
+	'gobsinaloa',
+	'GobiernoSonora',
+	'gobiernodetabasco',
+	'GobiernodelestadodeTlaxcala',
+	'GobiernodeVeracruz',
+	'gobzac',
+	'GobEdoSLP',
+	'gobdgo'
 	];
 	$scope.result=[];
 	$scope.resultGob=[];
@@ -85,9 +86,10 @@ app.controller('facebookController',function($scope,$rootScope){
 		var res=[];
 		angular.forEach(gobiernos, function(i){
 	     		var obj={};
-				FB.api('/' + i + '?fields=likes',function(response){ 
+				FB.api('/' + i + '?fields=likes,picture',function(response){ 
 					$rootScope.$apply(function() { 
 						obj["likes"] = response.likes;
+						obj["foto"] = response.picture;
 						obj["nombre"] = i;
 						$scope.resultGob.push(obj);
 					});
@@ -102,7 +104,7 @@ app.controller('facebookController',function($scope,$rootScope){
 		    if (res.status === 'connected') {
 		    	$rootScope.logged=true;
 		    	$scope.getLikes();
-		    	//$scope.getLikesGobiernos();
+		    	$scope.getLikesGobiernos();
 		    } 
 		    else {
 		      $rootScope.logged=false;

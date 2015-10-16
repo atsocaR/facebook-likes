@@ -35,20 +35,37 @@
 		</div>
 		<!--<button ng-show="logged" ng-click="FBLogot()">LogOut</button>!-->
 		<table class="table table-condensed" ng-show="logged">
-		    <tr>
+		    <tr  class="active">
 		      <th>#</th>
 		      <th></th>
-		      <th>Facebook Gobernador</th>
+		      <th>Gobernador</th>
 		      <th>Likes</th>
 		     
 		    </tr>
 		    <tr ng-repeat="gobers in result | orderBy:'-likes'" ng-class="{info: gobers.nombre=='MiguelMarquezM' }">
 		      <td>{{$index+1}}</td>
-		      <td><img ng-src="{{gobers.foto.data.url}}"</td>
+		      <td ><img class="img-circle" ng-src="{{gobers.foto.data.url}}"</td>
 		      <td >{{gobers.nombre}}</td>
 		      <td>{{gobers.likes | number}}</td>
 		    </tr>
 		</table>
+
+		<table class="table table-condensed" ng-show="logged">
+		    <tr  class="active">
+		      <th>#</th>
+		      <th></th>
+		      <th>Gobierno</th>
+		      <th>Likes</th>
+		     
+		    </tr>
+		    <tr ng-repeat="gobers in resultGob | orderBy:'-likes'" ng-class="{info: gobers.nombre=='gobiernoguanajuato' }">
+		      <td>{{$index+1}}</td>
+		      <td><img class="img-circle" ng-src="{{gobers.foto.data.url}}"</td>
+		      <td >{{gobers.nombre}}</td>
+		      <td>{{gobers.likes | number}}</td>
+		    </tr>
+		</table>
+
 
 		
 
