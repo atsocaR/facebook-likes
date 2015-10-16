@@ -29,7 +29,7 @@ app.controller('facebookController',function($scope,$rootScope){
 	gobiernos=["gobiernoguanajuato", 
 	"GobiernoDistritoFederal",
 	'GobiernoJalisco',
-	'gobierno.estado.yucatan', 
+	'gobierno.estado.yucatan',
 	'GobQro',
 	'gobmichoacan',
 	'gobierno.edomex',
