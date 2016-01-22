@@ -23,7 +23,6 @@ app.controller('facebookController',function($scope,$rootScope){
 	'betoborgefans',
 	'gracoramirezg',
 	'cesarduartejaquez',
-	'mario.anguiano.gobernador',
 	'egidiotorrecantu'
 	];
 	gobiernos=["gobiernoguanajuato", 
@@ -35,7 +34,6 @@ app.controller('facebookController',function($scope,$rootScope){
 	'gobierno.edomex',
 	'GobiernodeAguascalientes',
 	'GobiernoBC',
-	'GobiernoBCS',
 	'gobiernochihuahua',
 	'GobTamaulipas',
 	'gobiernodecoahuila',
